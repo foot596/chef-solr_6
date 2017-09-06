@@ -53,7 +53,7 @@ end
 
 # Create Include File From Template
 template '/etc/default/solr.in.sh' do
-  source ::File.join('install', 'solr.in.sh.erb')
+  source 'solr.in.sh.erb'
 end
 
 # Unpack Solr Install Script

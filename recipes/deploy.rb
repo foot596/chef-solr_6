@@ -28,11 +28,5 @@ bash 'unpack_solr_core' do
   code <<-EOH
         su #{node['solr']['user']} -c 'tar -xzf #{src_filename} --directory #{node['solr']['data_dir']}/data'
     EOH
-end
-
-# Restart Solr
-bash 'restart_solr' do
-  code <<-EOH
-    service solr restart
-  EOH
+  notifies :restart, 'service[solr]', :delayed
 end

@@ -16,6 +16,7 @@ default['java']['jdk_version'] = '8'
 # rubocop:disable Metrics/LineLength
 default['solr']['version'] = '6.0.1'
 default['solr']['url'] = "https://archive.apache.org/dist/lucene/solr/#{node['solr']['version']}/#{node['solr']['version'].split('.')[0].to_i < 4 ? 'apache-' : ''}solr-#{node['solr']['version']}.tgz"
+default['solr']['install_solr_service_url'] = 'https://raw.githubusercontent.com/apache/lucene-solr/master/solr/bin/install_solr_service.sh'
 default['solr']['dir'] = '/opt'
 default['solr']['user'] = 'solr'
 default['solr']['create_user'] = true
